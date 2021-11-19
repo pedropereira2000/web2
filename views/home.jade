@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  div 
+    h1(id="title")= title
+    p(id='title-desc') Welcome to #{title}
+    br
+    li: a(class='btn-route' type="button" class="btn btn-primary" href='/tecnologias') Tecnologias
+    li: a(class='btn-route' type="button" class="btn btn-primary" href='/sobre') Sobre
+    li: a(class='btn-route' type="button" class="btn btn-primary" href='/midia') Midia

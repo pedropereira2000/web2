@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  div(class="container")
+    a(id='btn-back' type="button" class="btn btn-primary" href='/') Voltar
+    h1(id="title")= title
+    p(id='title-desc') Welcome to #{title}
+    div(class="row")
+      div(id="itens")
+        a(href="www.google.com"): img(id="icons-lk" src="/images/linkedin.png", alt="")
+        img(id="icons-tt" src="/images/twitter.png", alt="")
+        img(id="icons-gh" src="/images/github.jpg", alt="")
+    div(class="row")
+      div(id="itens")
+        img(id="icons-lk" src="/images/gitlab.png", alt="")
+        img(id="icons-tt" src="/images/bitbucket.png", alt="")
+        img(id="icons-gh" src="/images/instagram.jpeg", alt="")
+    div(class="row")
+      div(id="itens")
+        img(id="icons-lk" src="/images/steam.png", alt="")
+        img(id="icons-tt" src="/images/roll20.jpeg", alt="")
+script.
+  function move() {
+    window.location.href = '/newpage'
+  }
