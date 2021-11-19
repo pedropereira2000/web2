@@ -1,0 +1,2 @@
+# Não permitindo que o git suba os arquivos referentes ao editor usado - Vscode
+.vscode/
