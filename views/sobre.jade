@@ -1,55 +1,19 @@
 extends layout
-
 block content
-  div(class="container")
-    a(id='btn-back' type="button" class="btn btn-primary" href='/') Voltar
-    h1(id="title")= title
-    p(id='title-desc') Welcome to #{title}
-    div(id="content")
-      div(id="v-card" class="card")
-        div(class="row")
-          div(class="utf")
-            p UTFPR - Cornélio Procópio
-            br
-            p Aluno: Pedro Henrique da Silva Pereira
-            br
-            p Curso : 65 - Bach Eng De Software
-            br
-          div(class="utf")
-            p Turno: Noite
-            br
-            p ingresso: 2/2018
-            br
-        div(class="row")
-          div(class="utf")
-            p Matriz: 138
-            br
-            p Coeficiente Absoluto: 0,8887
-            br
-            p Coeficiente Normalizado: 0,6447
-            br
-          div(class="utf")
-            p Período: 7
-            br
-            p Situação: Regular
-            br
-            p Data da colação: --/--/----
-            br
-      div(class="desc")
-        ul ET10S - Estágio
-
-      div(class="desc")
-        ul IF66K - Oficina De Integração 2
-
-      div(class="desc")
-        ul IF67H - Programação Para Dispositivos Moveis
-
-      div(class="desc")
-        ul IF671 - Programação Web 2
-
-      div(class="desc")
-        ul IF67K - Arquitetura De Software
-
-      div(class="desc")
-        ul IF67L - Trabalho De Conclusão De Curso 1
-      
+  link(rel='stylesheet', href='/stylesheets/itens.css')
+  div(class="containeri")
+    div(class="card")
+      h3 Motivação
+      br
+      p Com o novo meio de trabalho home ofice adotado por muitas empresas, pelo estado atual da conjuntura da sociedade fez-se necessário uma maneira para que as empresas e responsáveis pelos funcionários controlar e saber minimamente se os horários para o mesmo estão sendo cumpridos.
+      p Para tal foi idealizado uma plataforma onde esse controle pode ser realizado, e além disso será possível solicitar alteração nos ponto que foram batidos em atraso.
+    div(class="card")
+      h3 Solução proposta 
+      br
+      p O projeto proposto, tem como objetivo inicial estar possibilitando que um usuário se cadastre, e apartir deste usuário cadastrado, este possa estar conseguindo gerênciar sua conta e também está realizando a "batida de ponto" que representa o horário que o mesmo entrou e saiu.
+      p Sendo a configuração desse ponto com duas entradas e duas saida, pois no primeiro turno o usuário desempenha em torno de 3 a 4 horas, faz sua pausa para almoço e volta com mais uma entrada e mais uma saida.
+    div(class="card")
+      h3 Descrição do objetivo do projeto Ponto-Max 
+      br
+      p O projeto Ponto-Max, tem o objetivo inicial de auxiliar funcionários e suas empresas no monitoramento e controle dos horários em que deve ser cumprida as atividades das partes envolvidas.
+      p Pois préviamente já é estipulado entre as parte que o horário do funcionário pode ser mais flexivel ou deve seguir mais a risca.

@@ -8,7 +8,8 @@
   display: flex;
   align-items: center;
   text-align: center;
-  width: 100%;
+  width: 85%;
+  padding: 10px;
 }
 
 h2, p {
@@ -43,6 +44,8 @@ h2, p {
   background-color: lightseagreen;
   border-radius: 5%;
   padding-top: 5%;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 #content{
@@ -69,4 +72,51 @@ h2, p {
 
 .utf p{
   font-size: 13pt;
+}
+
+.tecs{
+  color: white;
+  font-style: bold;
+  font-size: 16pt;
+}
+
+.item:first-child{
+  margin-top: 20px;
+}
+
+.item {
+  text-decoration: none;
+  list-style: none;
+  font-style: bold;
+  color: white;
+  font-size: 16pt;
+  margin-top: 5%;
+  font-size: 16;
+}
+
+.item:hover{
+  color: black;
+}
+
+.tecs{
+  color: black;
+  font-size: 26pt;
+  align-items: center;
+  text-align: center;
+}
+
+img {
+  margin-left: 5%;
+}
+
+.img-exp{
+  width: 100px;
+}
+
+.img-nd{
+  width: 40px;
+}
+
+.img-jd{
+  width: 60px;
 }

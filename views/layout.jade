@@ -6,4 +6,24 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/cv.css')
   body
+    block navbar
+      div(class="container")
+        div.navbar
+          ul.col-md-12.row.itemul.ul
+            a(href="/")
+              li.col-md-3.itemul 
+                img(src="/images/logo.png")
+            a(href="/sobre")
+              li.col-md-3.itemul Projeto
+            a(href="/tecnologias")
+              li.col-md-3.itemul Tecnologias
+            a(href="/autor")
+              li.col-md-3.itemul Autor
+            a(href="#")
+              li.col-md-3.itemul Configuração
+            a(href="#")
+              li.col-md-3.itemul Login
     block content
+     
+    block footer
+      include footer

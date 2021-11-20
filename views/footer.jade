@@ -1,0 +1,9 @@
+link(rel="stylesheet", href="/stylesheets/footer.css")
+section(class="content")
+    div(class="container")
+        h3 Formulário de contato
+        form(class="form", method="POST", action="/send-email")
+            input(class="field", name="name", type="text", placeholder="Nome")
+            input(class="field", name="email",type="text", placeholder="E-mail")
+            textarea(name="message", cols="30", rows="10", placeholder="Digite uma mensagem aqui") 
+            input(class="field", type="submit", value="Enviar" )

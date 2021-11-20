@@ -4,18 +4,62 @@ body {
   background-color: blueviolet;
 }
 
-li{
-  margin-top: 120px;
+.ul{
+  text-align: center;
+  justify-content: center;
+  background-color: #90AC3B;
+  border-radius: 2vh;
+  color:white;
 }
 
-li, ul{
-  list-style-type: none;
+.itemul {
+  text-decoration: none;
   color: white;
+  list-style: none;
+  font-style: bold;
+}
+
+.itemul:hover{
+  text-decoration: none;
+  color: black;
+  list-style: none;
+  font-style: bold;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+  border-radius: 2vh;
+}
+
+.navbar a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 16px 10px;
+  text-decoration: none;
+}
+
+.navbar{
+  position: fixed; /* Set the navbar to fixed position */ /* Full width */
+  top: 0; /* Position the navbar at the top of the page */
+  left: 3vw;
+  width: 95%;
+  align-content: center;
+  z-index: 5;
+}
+
+.footer{
+  position: relative; /* Set the navbar to fixed position */ /* Full width */
+  bottom: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  margin-top: 10%;
 }
 
 #title, #title-desc {
   color: white;
   text-align: justify;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .btn-route {
@@ -33,7 +77,49 @@ li, ul{
   background-color: #008CBA; /* Blue */
 }
 
-div{
+.wrapper{
+  display: grid;
+  padding: 10px;
+  margin-top: 20vh;
+}
+
+div #conteudo{
+  background-color: blueviolet;
+  text-align: center;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: 15%;
+}
+
+#txtAreaSobre{
+  margin-top: 15%;
+  background-color: lightseagreen;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: justify;
+  font-size: 16px;
+  color: white;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+  resize: none;
+}
+
+#txtArea{
+  margin-top: 15%;
+  background-color: blueviolet;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: justify;
+  font-size: 16px;
+  color: white;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+  resize: none;
+}
+
+div #logo{
+  float: left;
   text-align: center;
   padding: 5px;
   justify-content: center;
@@ -52,4 +138,17 @@ div{
 
 #title {
   margin-top: 10vh;
+}
+
+#title-desc {
+  margin-top: 5vh;
+}
+
+p, a {
+  color: white;
+  font-size: 16pt;
+}
+
+a:hover{
+  color: black;
 }

@@ -1,0 +1,36 @@
+.containeri {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr; /* fraction*/
+    padding: 4%;
+}
+
+.card{
+    width: 400px;
+    max-width: 400px;
+    margin-top: 10vh;
+    margin-left: 5vw;
+    background-color: lightseagreen;
+    border-radius: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.card:first-child{
+    margin-left: 0;
+}
+
+h3 {
+    color: black;
+    font-size: 26pt;
+}
+
+p, a {
+    color: white;
+    font-size: 16pt;
+}
+
+a:hover{
+    color: black;
+}
