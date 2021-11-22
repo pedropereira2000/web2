@@ -25,13 +25,22 @@
 - Clone o repositório main
 > git clone https://github.com/pedropereira2000/web2.git
 
+- Apos renomeie o arquivo no diretório raiz chamado EXEMPLOEVN para
+> .env
+
+- Agora dento do arquivo .env altere o campo CHAVA_JWT assim como na descrição do arquivo
+> DIGITE AQUI SUA CHAVE SEGURA PARA SER USADA NO JWT (pode ser uma sequência aleatória com o FSA412!@$fdsnagj)
+
+- Rode o comando asseguir para o docker reconhecer o .env
+> docker build --tag ponto-max . 
+
 - Agora execute o docker com o comando
 > docker run -p 3000:3000 ponto-max
 
 - Acesse o link:
 > localhost:3000
 
-> <img src="./logo.png" alt="Logo"/>
+> <img src="./public/images/logo.png" alt="Logo" />
 
 Repositório para o projeto de web 2
 
