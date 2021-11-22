@@ -1,0 +1,131 @@
+#img-perf {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 85%;
+  padding: 10px;
+}
+
+h2, p {
+  color: white;
+}
+
+.itens{
+  display: inline;
+}
+
+#icons-lk{
+  border-radius: 30%;
+  width: 55px;
+  margin: 5px;
+}
+
+#icons-tt{
+  border-radius: 30%;
+  width: 60px;
+  height: 55px;
+  margin: 5px;
+}
+
+#icons-gh{
+  border-radius: 30%;
+  width: 55px;
+  margin: 5px;
+}
+
+#v-card{
+  margin-top: 10vh;
+  background-color: lightseagreen;
+  border-radius: 5%;
+  padding-top: 5%;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+#content{
+  align-items: center;
+  text-align: center;
+}
+
+.desc{
+  margin-left: 15%;
+  margin-right: 15%;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  border-radius: 5%;
+  margin-top: 2vh;
+  background-color: lightseagreen;
+}
+
+.utf{
+  margin:5%;
+  align-items: initial;
+  text-align: left;
+}
+
+.utf p{
+  font-size: 13pt;
+}
+
+.tecs{
+  color: white;
+  font-style: bold;
+  font-size: 16pt;
+}
+
+.item:first-child{
+  margin-top: 20px;
+}
+
+.item {
+  text-decoration: none;
+  list-style: none;
+  font-style: bold;
+  color: white;
+  font-size: 16pt;
+  margin-top: 5%;
+  font-size: 16;
+}
+
+.item:hover{
+  color: black;
+}
+
+.tecs{
+  color: black;
+  font-size: 26pt;
+  align-items: center;
+  text-align: center;
+}
+
+img {
+  margin-left: 5%;
+}
+
+.img-exp{
+  width: 100px;
+}
+
+.img-nd{
+  width: 40px;
+}
+
+.img-jd{
+  width: 60px;
+}
+
+.alertGeral{
+  width: 300px;
+  margin-top: 10vh;
+  margin-left: 40%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}

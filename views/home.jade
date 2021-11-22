@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(class="wrapper")
+    div(id="logo")
+      //h1(id="title")= title
+      if typeof(usuario.name) !== 'undefined'
+        p(id='title-desc') Bem vindo #{usuario.name} ao Ponto-Max
+      else 
+        p(id='title-desc') Bem vindo ao Ponto-Max, para uma melhor experiência faça o login
+    div(id="conteudo")
+      h2 Projeto - Ponto Max
+      textarea(id="txtArea", cols="60", rows="10" maxlength=1000) O objetivo deste projeto é estar concretizando na disciplina de programação web 2 a construção de uma aplicação para controle de ponto para empreses. Inicialmente as funções implementadas seram controle de usuários e pontos onde o objetivo é cadastrar, editar, buscar e excluir esses dois objetos.
