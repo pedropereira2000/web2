@@ -5,6 +5,14 @@
     padding: 4%;
 }
 
+.container-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+}
+
 .card{
     width: 400px;
     max-width: 400px;
@@ -17,6 +25,29 @@
     padding-left: 5%;
 }
 
+.it-login{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-login{
+    width: 20vw;
+    max-width: 600px;
+    height: 400px;
+    max-height: 700;
+    margin-top: 10vh;
+    margin-left: 5vw;
+    background-color: lightseagreen;
+    border-radius: 5%;
+    padding-top: 5%;
+    padding-right: 15%;
+    padding-left: 15%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .card:first-child{
     margin-left: 0;
 }
@@ -24,6 +55,7 @@
 h3 {
     color: black;
     font-size: 26pt;
+    text-align: center;
 }
 
 p, a {
@@ -33,4 +65,17 @@ p, a {
 
 a:hover{
     color: black;
+}
+
+input {
+    border-radius: 2rem;
+    border-color: lightgray;
+}
+
+.alertLogin{
+    width: 20vw;
+    margin-left: 42%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }

@@ -19,10 +19,19 @@ html
               li.col-md-3.itemul Tecnologias
             a(href="/autor")
               li.col-md-3.itemul Autor
-            a(href="#")
+            a(href="/configuracao")
               li.col-md-3.itemul Configuração
-            a(href="#")
-              li.col-md-3.itemul Login
+            if typeof(usuario.name) !== 'undefined'
+              li.col-md3.itemul #{usuario.name}
+              a(href="/logout", name="logout")
+                li.col-md-3.itemul Logout 
+            else
+              a(href="/login", name="login")
+                li.col-md-3.itemul Login
+    block error
+      if error
+        div(class="alert alert-danger alertGeral")
+          strong #{error}   
     block content
      
     block footer

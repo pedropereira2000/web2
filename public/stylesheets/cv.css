@@ -120,3 +120,12 @@ img {
 .img-jd{
   width: 60px;
 }
+
+.alertGeral{
+  width: 300px;
+  margin-top: 10vh;
+  margin-left: 40%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
