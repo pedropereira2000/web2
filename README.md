@@ -11,6 +11,8 @@
 - Rode o comando asseguir para o docker reconhecer o .env
 > docker-compose up -d
 
+- Aguarde alguns segundos para que o container com o mongo seja iniciado
+
 - Agora acesse o link:
 > localhost:3000
 ## Guia para acesso ao site
