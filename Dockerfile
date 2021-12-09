@@ -1,13 +1,11 @@
 FROM node:12.16.3
 
-WORKDIR /code
+WORKDIR /usr/src/app
 
-ENV PORT 80
-
-COPY package.json /code/package.json
+COPY package*.json ./
 
 RUN npm install
 
-COPY . /code
+COPY . .
 
-CMD npm start
+CMD ["npm", "start"]

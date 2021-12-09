@@ -1,14 +1,16 @@
 version: '3.4'
 
 services:
-  nodejs_mongo_docker:
-    image: nodejs_mongo_docker
+  app:
     build: .
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    container_name: docker-node-mongo
+    restart: always
     ports:
       - 3000:3000
-    volumes:
-      - .:/code
-      - node_modules:/node_modules
+    command: npm start
     links:
       - mongodb
   mongodb:
@@ -20,4 +22,3 @@ services:
 
 volumes:
   data:
-  node_modules:
