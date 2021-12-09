@@ -1,0 +1,33 @@
+<%-include ('./partials/navbar')-%>
+
+<link rel='stylesheet', href='/stylesheets/itens.css'>
+<div class="container-pontos">
+    <div class="card-total"> 
+        <h3>Gerênciando contas</h3>
+        <table borde="1">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Email</td>
+                    <td>Password</td>
+                    <td>Tipo User</td>
+                    <td>Image</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(function(user) { %>
+                    <tr>
+                        <td><%= user.nome %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.pass %></td>
+                        <td><%= user.type %></td>
+                        <td><%= user.image %></td> 
+                        <td><a href="/admin/delete/<%= user._id %>">Delete</a></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div> 
+</div>
+
+<%-include ('./partials/footer')-%>

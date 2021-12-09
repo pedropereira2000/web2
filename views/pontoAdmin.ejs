@@ -1,0 +1,31 @@
+<%-include ('./partials/navbar')-%>
+
+<link rel='stylesheet', href='/stylesheets/itens.css'>
+<div class="container-pontos">
+    <div class="card-total">
+        <h3>Histórico de pontos</h3>
+        <table borde="1">
+            <thead>
+                <tr>
+                    <td>Email</td>
+                    <td>Data</td>
+                    <td>Entrada</td>
+                    <td>Saida</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% pontos.forEach(function(pt) { %>
+                    <tr>
+                        <td><%= pt.email %></td>
+                        <td><%= pt.data %></td>
+                        <td><%= pt.primeira_entrada %></td>
+                        <td><%= pt.segunda_saida %></td>
+                        <td><a href="/admin/pontos/update/<%= pt._id %>">Update</a>|<a href="/admin/pontos/delete/<%= pt._id %>">Delete</a></td> 
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%-include ('./partials/footer')-%>

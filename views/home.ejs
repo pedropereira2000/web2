@@ -1,0 +1,12 @@
+<%-include ('./partials/navbar')-%>
+
+<div id="logo">
+    <h1 class="mt-4">Home Page</h1>
+    <% if(user!=undefined) { %>
+        <p class="lead mb-3">Seja bem vindo <%= user.nome %> ao site Ponto-Max</p>
+    <% }else { %>
+        <p class="lead mb-3">Seja bem vindo ao site Ponto-Max, para ter uma melhor experiencia realize o login na sua conta</p>
+    <% } %>
+</div>
+
+<%-include ('./partials/footer')-%>

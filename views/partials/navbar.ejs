@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="navbar">
+        <ul class="col-md-12 row itemul ul">
+            <a href="/">
+                <li class="col-md-3 itemul"><img src="/images/logo.png"></li> 
+            </a>
+            <a href="/projeto">
+                <li class="col-md-3 itemul">Projeto</li>
+            </a>
+            <a href="/tecnologias">
+                <li class="col-md-3 itemul">Tecnologias</li>
+            </a>
+            <a href="/autor">
+                <li class="col-md-3 itemul">Autor</li>
+            </a>
+            <a href="/pontos">
+                <li class="col-md-3 itemul">Ponto</li>
+            </a>
+            <a href="/config">
+                <li class="col-md-3 itemul">Configuração</li>
+            </a>
+            <% if(user) { %>
+                <a href="/users/logout">
+                    <li class="col-md-3 itemul">Logout</li>
+            <% }else { %>
+                <a href="/welcome">
+                    <li class="col-md-3 itemul">Login</li>
+            <% } %>
+            </a>
+        </ul>
+    </div>
+</div>

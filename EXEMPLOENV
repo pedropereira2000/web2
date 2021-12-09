@@ -1,5 +1,4 @@
-#EMAIL=juana.mueller47@ethereal.email
-
-#PASS=kjtyXJMnNbmxXBtBxp
-
-CHAVA_JWT=DIGITE AQUI SUA CHAVE SEGURA PARA SER USADA NO JWT (pode ser uma sequência aleatória com o FSA412!@$fdsnagj)
+SESSION_SECRET=$%A5803AS&gdfj
+NODEMAILER_EMAIL=juana.mueller47@ethereal.email
+NODEMAILER_PASS=kjtyXJMnNbmxXBtBxp
+MONGODB_URI=mongodb://mongodb:27017/ponto-max

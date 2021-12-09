@@ -1,3 +1,8 @@
+.container-pontos {
+    text-align: center;
+    padding: 4%;
+}
+
 .containeri {
     display: grid;
     text-align: center;
@@ -13,11 +18,30 @@
     padding: 4%;
 }
 
+.card-total{
+    width: 90%;
+    height: 80vh;
+    max-height: 200vh;
+    margin-top: 10vh;
+    margin-left: 5%;
+    background-color: lightseagreen;
+    border-radius: 5%;
+    padding-top: 2%;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+tr {
+    border-bottom: solid black;
+    margin-bottom: 100px;
+}
+
 .card{
-    width: 400px;
+    width: 350px;
     max-width: 400px;
     margin-top: 10vh;
-    margin-left: 5vw;
+    margin-left: 10px;
+    margin-right: 10px;
     background-color: lightseagreen;
     border-radius: 5%;
     padding-top: 5%;
@@ -31,21 +55,52 @@
     text-align: center;
 }
 
-.card-login{
-    width: 20vw;
-    max-width: 600px;
-    height: 400px;
-    max-height: 700;
+.it-ponto{
+    margin-left: 15px
+}
+
+.it-cadastro{
+    margin-top: 2vh;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-cad{
+    width: 35vw;
+    max-width: 50vw;
+    height: 450px;
+    max-height: 700px;
     margin-top: 10vh;
     margin-left: 5vw;
     background-color: lightseagreen;
     border-radius: 5%;
     padding-top: 5%;
-    padding-right: 15%;
+    padding-right: 10%;
+    padding-left: 10%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-login{
+    width: 35vw;
+    max-width: 50vw;
+    height: 450px;
+    max-height: 700px;
+    margin-top: 10vh;
+    margin-left: 5vw;
+    background-color: lightseagreen;
+    border-radius: 5%;
+    padding-top: 5%;
+    padding-right: 10%;
     padding-left: 15%;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .card:first-child{
@@ -78,4 +133,51 @@ input {
     align-items: center;
     text-align: center;
     justify-content: center;
+}
+
+.it-cad:first-child {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.it-cad{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 2vh;
+}
+
+.it-cad select{
+    margin-left: 0.5vw;
+}
+
+#photo{
+    margin-left: 4vw;
+}
+
+h6 {
+    color: black;
+    font-size: 16pt;
+    text-align: center;
+}
+
+.lbl{
+    font-size: 14pt;
+}
+
+.btn-alt{
+    margin-top: 5%;
+}
+
+input.field{
+    margin-left: 5%;
+}
+
+.badge {
+    margin-top: 15%;
+    margin-bottom: 15px;
+    height: 30px;
+    padding: 10px;
+    font-size: 10pt;
 }

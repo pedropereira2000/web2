@@ -1,0 +1,29 @@
+<%-include ('./partials/navbar')-%>
+
+<link rel='stylesheet', href='/stylesheets/itens.css'>
+<div class="container-pontos">
+    <div class="card-total">
+        <h3>Gerênciando conta logada</h3> 
+        <form class="form" action="/users/config" method="POST">
+            <div class="row it-ponto">
+                <label>Alterar nome de exibição da conta</label>
+                <input class="field" name="nome" id="idName" type="text" value="<%=user.nome%>">
+            </div>
+            <div class="row it-ponto">
+                <label>Alterar email da conta</label>
+                <input class="field" name="email" id="idName" type="text" value="<%=user.email%>">
+            </div>
+            <div class="row it-ponto">
+                <label>Alterar senha da conta</label>
+                <input class="field" name="pass" id="idName" type="password" value="<%=user.pass%>">
+            </div>
+            <div class="row it-ponto">
+                <label>Alterar imagem da conta</label>
+                <input class="field" name="image" id="idName" type="file" value="<%=user.image%>">
+            </div>
+            <input class="btn-alt btn btn-primary" type="submit" value="Alterar" name="alt">
+        </form>
+    </div>
+</div>
+
+<%-include ('./partials/footer')-%>

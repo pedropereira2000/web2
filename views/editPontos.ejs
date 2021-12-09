@@ -1,0 +1,81 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+        <h1 class="text-center mb-3">
+            <i class="fas fa-user-plus"></i> Alterar Ponto
+        </h1>
+        <%-include ('./partials/messages')-%>
+        <form action="/admin/pontos/update/<%= id %>" method="POST">
+            <div class="form-group"
+                <label for="email">Email:</label>
+                <input
+                type="text"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Email"
+                value="<%= typeof email != 'undefined' ? email : '' %>"
+                readonly 
+                />
+            </div>
+            <div class="form-group">
+                <label for="data">Data:</label>
+                <input
+                type="date"
+                id="data"
+                name="data"
+                class="form-control"
+                placeholder="Data"
+                value="<%= typeof data != 'undefined' ? data : '' %>"
+                readonly 
+                />
+            </div>
+            <div class="form-group">
+                <label for="et1">Primeira Entrada: </label>
+                <input
+                type="time"
+                id="et1"
+                name="et1"
+                class="form-control"
+                placeholder="Primeira Entrada"
+                value="<%= typeof pt1 != 'undefined' ? pt1 : '' %>"
+                />
+            </div>
+            <div class="form-group">
+                <label for="st1">Primeira Saida: </label>
+                <input
+                type="time"
+                id="st1"
+                name="st1"
+                class="form-control"
+                placeholder="Primeira Saida"
+                value="<%= typeof pt2 != 'undefined' ? pt2 : '' %>"
+                />
+            </div>
+            <div class="form-group">
+                <label for="et2">Segunda Entrada: </label>
+                <input
+                type="time"
+                id="et2"
+                name="et2"
+                class="form-control"
+                placeholder="Segunda Entrada"
+                value="<%= typeof pt3 != 'undefined' ? pt3 : '' %>"
+                />
+            </div>
+            <div class="form-group">
+                <label for="st2">Segunda Saida: </label>
+                <input
+                type="time"
+                id="st2"
+                name="st2"
+                class="form-control"
+                placeholder="Segunda Saida"
+                value="<%= typeof pt4 != 'undefined' ? pt4 : '' %>"
+                />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+                Atualizar Ponto </button>
+        </form>
+    </div>
+</div>

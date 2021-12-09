@@ -1,6 +1,5 @@
 # Não permitindo que o git suba os arquivos referentes ao editor usado - Vscode
 .vscode
 node_modules
-templateHeadFooter
-bin
 .env
+package-lock.json

@@ -1,88 +1,91 @@
 const path = require('path')
-require('dotenv').config
-
-var createError = require('http-errors');
+const dotenv = require('dotenv').config()
 const express = require('express');
-const logger = require('morgan');
 const bodyParser = require('body-parser');
-
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+const ejsLint = require('ejs-lint');
 
 //Set Cookies
 const cookieParser = require("cookie-parser")
+//Definindo a Sessão
+//Atribuindo Passport
+const expressLayouts = require('express-ejs-layouts');
+const passport = require('passport');
+const flash = require('connect-flash');
+const session = require('express-session');
+
+const mongoose = require('mongoose');
+// Ligar á B.D.: 'test'->user da BD, ´nnn´->pass
+mongoose.connect(process.env.MONGODB_URI);
+// Confirma ligação na consola
+mongoose.connection.on('connected', function () {
+  console.log('Connected to Database '+'test');
+});
+// Mensagem de Erro
+mongoose.connection.on('error', (err) => {
+  console.log('Database error '+err);
+});
+
+//=======================>>>
+
+
+const app = express();
+
+app.use(expressLayouts);
+
+// view engine setup
+app.set('view engine', 'ejs');
+
+//app.use(logger('dev'));
+app.use(express.static(path.join(__dirname, './public')));
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+
+//Set Cookies
 app.use(cookieParser())
 
 //Definindo a Sessão
-const session = require("express-session")
 app.use(session({
-    secret: "$%A5803AS&gdfj",
-    resave: false,
-    saveUninitialized: false
+  secret: "$%A5803AS&gdfj",
+  resave: true,
+  saveUninitialized: true
 }));
 
 //Atribuindo Passport
-const passport = require('passport')
-const configPassport = require('./outher/passAuth')
-configPassport(passport)
+require('./config/passport')(passport);
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(flash());
 
-//Definindo as rotas
-const indexRouter = require('./routes/index');
-const apiRouter = require('./routes/api').Router
-const jwtPassport = require('./routes/api').Passport
-const loginControl = require('./routes/controleLogin')
+// Global variables middleware
+app.use(function(req, res, next) {
+  // ‘res.locals’->é a forma de criar variáveis ou funções globais
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  // passport tem as suas próprias flash-msgs
+  // que passa em ‘flash(‘error’)’, assim faço overwrite
+  res.locals.error = req.flash('error');
+  next();
+});
 
-app.use(jwtPassport.initialize())
-
-app.use('/', indexRouter)
-app.use('/api', apiRouter)
-
-//Definindo rotina padrão para o Login
-app.post("/login", loginControl, passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/login",
-  failureMessage: true
-}))
-
+const users = require('./routes/user');
+const index = require('./routes/index');
+const admin = require('./routes/admin');
+app.use('/users', users);
+app.use('/', index);
+app.use('/admin', admin);
 
 
 //Configurando para permitir envio de email
 const mailer = require('nodemailer');
-//const EMAIL_USER = process.env.EMAIL_USER;
-//const EMAIL_PASS = process.env.EMAIL_PASS;
 
 const transporter = mailer.createTransport({
   host: 'smtp.ethereal.email',
   port: 587,
   auth: {
-      user: "juana.mueller47@ethereal.email",
-      pass: "kjtyXJMnNbmxXBtBxp"
+      user: process.env.NODEMAILER_EMAIL,
+      pass: process.env.NODEMAILER_PASS
   }
 });
-
-/*var transporter = mailer.createTransport({
-  host: 'smtp.gmail.com',
-  service: 'gmail',
-  port: 587,
-  secure: false,
-  requireTLS: true,
-  auth: {
-    user: "pedropereriratestes@gmail.com",
-    pass: "Pedro@0704"
-  }
-});*/
 
 // POST para envio de email
 app.post('/send-email', (req, res) => {
@@ -101,8 +104,10 @@ app.post('/send-email', (req, res) => {
 });
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.use(function(err, req, res, next){
+  console.log(err);
+  // ‘res.status(422)’->muda o status
+  res.status(422).send({error: err.message});
 });
 
 // error handler

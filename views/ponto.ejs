@@ -1,0 +1,72 @@
+<%-include ('./partials/navbar')-%>
+
+<link rel='stylesheet', href='/stylesheets/itens.css'>
+<div class="container-pontos">
+    <div class="card-total">
+        <h3>Controle de pontos do dia</h3> 
+        <form class="form" action="/users/pontos" method="POST">
+            <div class="row it-ponto">
+                <label class="lbl">Usuário Logado: <%= user.nome %></label>
+            </div>
+            <div class="row it-ponto">
+                <label class="lbl">Data Atual: <%= data %></label>
+            </div>
+            <div class="row it-ponto">
+                <% if(ponto != undefined && ponto != null) { %>
+                    <% if(ponto.segunda_saida) { %>
+                        <label class="lbl">Último registro: <%= ponto.segunda_saida %></label>
+                    <% }else if(ponto.segunda_entrada) { %>
+                        <label class="lbl">Último registro: <%= ponto.segunda_entrada %></label>
+                    <% }else if(ponto.primeira_saida) { %>
+                        <label class="lbl">Último registro: <%= ponto.primeira_saida %></label>
+                    <% }else if(ponto.primeira_entrada) { %>
+                        <label class="lbl">Último registro: <%= ponto.primeira_entrada %></label>
+                    <% } %>
+                <% }else { %>
+                    <label class="lbl">Último registro: Vazio</label>
+                <% } %>
+            </div>
+            <% if(ponto != undefined && ponto != null) { %>
+                <% if(ponto.segunda_saida) { %>
+                    <span class="badge badge-secondary">Todos os pontos do dia já foram batidos</span>
+                    <input class="field btn btn-primary" type="submit" value="Bater Ponto" name="alt" disabled="true">
+                <% }else { %>
+                    <input class="field btn btn-primary" type="submit" value="Bater Ponto" name="alt">
+                <% } %>    
+            <% }else { %>
+                <input class="field btn btn-primary" type="submit" value="Bater Ponto" name="alt">
+            <% } %>
+        </form>
+    </div>
+    <div class="card-total">
+        <h3>Histórico de pontos</h3>
+        <table borde="1">
+            <thead>
+                <tr>
+                    <td>Email</td>
+                    <td>Data</td>
+                    <td>Entrada</td>
+                    <td>Saida</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(pontos!=undefined) { %>
+                    <% pontos.forEach(function(pt) { %>
+                        <tr>
+                            <td><%= pt.email %></td>
+                            <td><%= pt.data %></td>
+                            <td><%= pt.primeira_entrada %></td>
+                            <% if(pt.primeira_saida) { %>
+                                <td><%= pt.primeira_saida %></td>
+                            <% } else if(pt.segunda_saida) { %>
+                                <td><%= pt.segunda_saida %></td> 
+                            <% } %>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%-include ('./partials/footer')-%>
