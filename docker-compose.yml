@@ -11,14 +11,3 @@ services:
     ports:
       - 3000:3000
     command: npm start
-    links:
-      - mongodb
-  mongodb:
-    image: mongo:latest
-    ports:
-      - 27017:27017
-    volumes:
-      - ./data:/data/db
-
-volumes:
-  data:
