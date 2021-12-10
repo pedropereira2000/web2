@@ -5,10 +5,13 @@
 - Clone o repositório main
 > git clone https://github.com/pedropereira2000/web2.git
 
+- Acesse o diretório
+> web2
+
 - Apos renomeie o arquivo no diretório raiz chamado EXEMPLOEVN para
 > .env
 
-- Rode o comando asseguir para o docker reconhecer o .env
+- Rode o comando asseguir para criar e subir o container do docker
 > docker-compose up -d
 
 - Aguarde alguns segundos para que o container com o mongo seja iniciado
