@@ -1,4 +1,4 @@
 SESSION_SECRET=$%A5803AS&gdfj
 NODEMAILER_EMAIL=juana.mueller47@ethereal.email
 NODEMAILER_PASS=kjtyXJMnNbmxXBtBxp
-MONGODB_URI=mongodb://mongodb:27017/ponto-max
+MONGODB_URI=mongodb+srv://admin:admin@cluster0.b6ktu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
